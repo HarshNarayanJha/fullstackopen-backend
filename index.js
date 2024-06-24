@@ -81,7 +81,7 @@ app.post('/api/persons', (request, response) => {
 app.get('/api/persons/:id', (request, response) => {
     const id = request.params.id
     const person = persons.find(p => p.id === id)
-
+d
     if (person) {
         response.json(person)
     } else {
@@ -91,9 +91,10 @@ app.get('/api/persons/:id', (request, response) => {
 
 app.delete('/api/persons/:id', (request, response) => {
     const id = request.params.id
+    const person = persons.find(p => p.id === id)
     persons = persons.filter(p => p.id !== id)
 
-    response.status(204).end()
+    response.json(person)
 })
 
 const PORT = 3001
