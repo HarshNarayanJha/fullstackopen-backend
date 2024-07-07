@@ -19,7 +19,7 @@ const personSchema = new mongoose.Schema({
     number: String,
 })
 
-const Person = new mongoose.model('Person', personSchema)
+const Person = mongoose.model('Person', personSchema)
 
 if (process.argv.length == 3) {
     // list mode

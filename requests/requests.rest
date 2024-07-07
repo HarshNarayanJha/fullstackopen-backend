@@ -14,3 +14,22 @@ content-type: application/json
 
 DELETE https://fs-phonebook-backend.glitch.me/api/persons/9560 HTTP/1.1
 
+#
+##
+###
+# Local
+###
+##
+#
+
+GET http://localhost:3001/api/persons HTTP/1.1
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Senku",
+    "number": "1236778"
+}
