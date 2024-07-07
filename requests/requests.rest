@@ -12,5 +12,5 @@ content-type: application/json
 
 ###
 
-DELETE https://fs-phonebook-backend.glitch.me/api/persons HTTP/1.1
+DELETE https://fs-phonebook-backend.glitch.me/api/persons/9560 HTTP/1.1
 
