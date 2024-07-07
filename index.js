@@ -21,11 +21,15 @@ app.get('/', (request, response) => {
 })
 
 app.get('/info', (request, response) => {
-    response.send(`
-        <p>Phonebook has info for ${Person.length} people</p>
-        <br />
-        <p>${new Date().toString()}</p>
-    `)
+    Person.collection.countDocuments().then(count => {
+        response.send(`
+            <p>Phonebook has info for ${count} people</p>
+            <br />
+            <p>${new Date().toString()}</p>
+        `)
+    }).catch(error => {
+        response.send(500).end()
+    })
 })
 
 app.get('/api/persons', (request, response) => {
