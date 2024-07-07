@@ -30,6 +30,10 @@ POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Senku",
+    "name": "Senku2",
     "number": "1236778"
 }
+
+###
+
+DELETE http://localhost:3001/api/persons/668aaf679b6b6f9ef1619016 HTTP/1.1
