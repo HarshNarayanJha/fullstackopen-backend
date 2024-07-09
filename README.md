@@ -6,6 +6,7 @@ Phonebook API backend App Link: https://fs-phonebook-backend.glitch.me/
     API Url: https://fs-phonebook-backend.glitch.me/api/persons
 
 
+Note: Since I use `bun` as my pm and runtime, I didn't need to install dotenv package! If you use node.js, you may want to install it!
 
 This repository contains my exercise solutions for the fullstackopen course [here](https://fullstackopen.com/en/) from part 3 and onwards. This is beacuse part 3 suggests to make a new git repo from now on. Previous parts can be found [here](https://github.com/HarshNarayanJha/fullstackopen)
 
@@ -15,7 +16,7 @@ This repository contains my exercise solutions for the fullstackopen course [her
 - [x] [part0](https://github.com/HarshNarayanJha/fullstackopen/tree/main/part0)
 - [x] [part1](https://github.com/HarshNarayanJha/fullstackopen/tree/main/part1)
 - [x] [part2](https://github.com/HarshNarayanJha/fullstackopen/tree/main/part2)
-- [ ] part3
+- [x] part3
 - [ ] part4
 - [ ] part5
 - [ ] part6
