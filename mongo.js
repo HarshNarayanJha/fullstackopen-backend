@@ -1,57 +1,58 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 if (process.argv.length < 3) {
-    console.log("Error: password required")
-    console.log("Usage:\n\tTo list all added persons: node mongo.js <password>");
-    console.log("\tTo add a new person: node mongo.js <password> <name> number");
-    process.exit(1)
+  console.log('Error: password required')
+  console.log('Usage:\n\tTo list all added persons: node mongo.js <password>')
+  console.log('\tTo add a new person: node mongo.js <password> <name> number')
+  process.exit(1)
 }
 
 const password = process.argv[2]
 const url = `mongodb+srv://mario:${password}@phonebook-backend.64aowfq.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Phonebook-Backend`
 
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', false)
 
 mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
-    name: String,
-    number: String,
+  name: String,
+  number: String,
 })
 
 const Person = mongoose.model('Person', personSchema)
 
-if (process.argv.length == 3) {
-    // list mode
-    console.log("phonebook:");
+if (process.argv.length === 3) {
+  // list mode
+  console.log('phonebook:')
 
-    Person.find({}).then(result => {
-        result.forEach(person => {
-            console.log(person.name, person.number);
-        })
-    
-        mongoose.connection.close()
-        process.exit(0)
+  Person.find({}).then(result => {
+    result.forEach(person => {
+      console.log(person.name, person.number)
     })
 
-} else if (process.argv.length == 5) {
-    // add mode
+    mongoose.connection.close()
+    process.exit(0)
+  })
 
-    const name = process.argv[3]
-    const number = process.argv[4]
+} else if (process.argv.length === 5) {
+  // add mode
 
-    const person = new Person({
-        name,
-        number
-    })
+  const name = process.argv[3]
+  const number = process.argv[4]
 
-    person.save().then(result => {
-        console.log(`added ${name} number ${number} to phonebook`)
-        mongoose.connection.close()
-        process.exit(0)
-    })
+  const person = new Person({
+    name,
+    number
+  })
+
+  // eslint-disable-next-line no-unused-vars
+  person.save().then(result => {
+    console.log(`added ${name} number ${number} to phonebook`)
+    mongoose.connection.close()
+    process.exit(0)
+  })
 
 } else {
-    console.log("Error: Unknown number of agruments! Run without arguments to see usage info!");
-    process.exit(0)
+  console.log('Error: Unknown number of agruments! Run without arguments to see usage info!')
+  process.exit(0)
 }

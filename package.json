@@ -6,16 +6,21 @@
   "scripts": {
     "start": "bun index.js",
     "dev": "bun --hot index.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "globals": "^15.8.0",
     "nodemon": "^3.1.4"
   },
   "dependencies": {
+    "@eslint/js": "^9.6.0",
+    "@stylistic/eslint-plugin-js": "^2.3.0",
     "cors": "^2.8.5",
+    "eslint": "9.x",
     "express": "^4.19.2",
     "mongoose": "^8.4.5",
     "morgan": "^1.10.0"
